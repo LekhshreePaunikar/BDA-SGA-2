@@ -1,0 +1,163 @@
+/* styles.css */
+
+/* General styling for the entire application */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    margin: 0;
+}
+
+/* Container styling */
+.container, .button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Button and Link Styling */
+button, input[type="submit"], .button-container button, a.button-link {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover, input[type="submit"]:hover, a.button-link:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Form styling for all forms */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Table styling for listing authors and books */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for table actions (Edit/Delete links) */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.actions a {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+/* Specific page elements */
+form.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+.search-form input[type="text"] {
+    width: 200px;
+}
+
+.search-form input[type="submit"] {
+    padding: 6px 12px;
+}
+
+/* Login page styling */
+.login-form {
+    width: 300px;
+    margin: 50px auto;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+

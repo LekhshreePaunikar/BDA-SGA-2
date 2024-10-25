@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Book</title>
+</head>
+<body>
+<h2>Add New Book</h2>
+<form th:action="@{/books/save}" th:object="${book}" method="post">
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" required/>
+    <br><br>
+    <label>Author:</label>
+    <select th:field="*{author.id}">
+        <option th:each="author : ${listAuthors}" th:value="${author.id}" th:text="${author.name}"></option>
+    </select>
+    <br><br>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

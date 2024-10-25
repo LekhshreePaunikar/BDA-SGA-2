@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Author</title>
+</head>
+<body>
+<h2>Add New Author</h2>
+<form th:action="@{/authors/save}" th:object="${author}" method="post">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required/>
+    <br><br>
+    <button type="submit">Save</button>
+    <a href="/authors">Cancel</a>
+</form>
+</body>
+</html>

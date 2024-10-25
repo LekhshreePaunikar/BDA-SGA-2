@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books List</title>
+</head>
+<body>
+<h2>Books List</h2>
+<a href="/books/new">Add New Book</a>
+<form action="/books/author" method="get">
+    <input type="text" name="name" placeholder="Author Name">
+    <input type="submit" value="Search">
+</form>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${listBooks}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author.name}"></td>
+        <td>
+            <a th:href="@{/books/edit/{id}(id=${book.id})}">Edit</a>
+            <a th:href="@{/books/delete/{id}(id=${book.id})}"
+               onclick="return confirm('Are you sure you want to delete this book?');">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
