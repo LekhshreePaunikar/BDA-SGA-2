@@ -67,7 +67,7 @@ I created **JSP pages** for listing, adding, and updating entities (`authors.htm
 `update_author.html`, etc.), with CSS applied for a consistent, visually appealing design. Forms are
 clear and intuitive, supporting efficient user interaction.
 
-6. ## Testing ###
+6. ### Testing ###
 To validate functionality, I wrote unit tests in `AuthorRepositoryTest` and `BookRepositoryTest` to
 verify data operations and custom queries. These tests confirm repository reliability, while web
 interface tests verified create, read, and update functionalities, ensuring end-to-end functionality.
