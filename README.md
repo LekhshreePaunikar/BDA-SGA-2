@@ -1,5 +1,34 @@
 # Book author management #
 
+This project implements a **Book Author Management System** using **Spring Boot** and **JPA**. It provides a web-based interface for managing authors and their books, featuring comprehensive **CRUD** operations, custom queries, and a user-friendly **JSP**-based UI. 
+
+## Table of Contents
+- [Technologies Used](#technologies-used)
+- [Entity Relationships](#entity-relationships)
+- [Operations](#operations)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Challenges Faced](#challenges-faced)
+- [Future Improvements](#future-improvements)
+  
+## TECHNOLOGIES USED
+- **Java 17**: The core programming language for this project, offering robust object-oriented features.
+- **Spring Boot 3.0**: Simplifies the setup and development of Spring applications with built-in dependency management and embedded servers.
+- **JPA/Hibernate**: For ORM (Object Relational Mapping), allowing easy interaction with the PostgreSQL database.
+- **PostgreSQL**: A powerful, open-source relational database management system.
+- **JSP**: Provides a dynamic way to render server-side data into web pages.
+- **Thymeleaf**: Facilitates the creation of server-side rendered templates with Spring Boot.
+- **JUnit**: For unit testing, ensuring that the application's functionalities are reliable and error-free.
+
+## ENTITY RELATIONSHIPS: ##
+- **Author:** Each author can write multiple books.
+  - `id` (Primary Key)
+  - `name` (String)
+- **Book:** Each book is associated with a single author.
+  - `id` (Primary Key)
+  - `title` (String)
+  - `author` (Foreign Key to Author)
+   
 ## OPERATIONS: ##
 
 1. ### Populate Database ###
@@ -71,3 +100,34 @@ clear and intuitive, supporting efficient user interaction.
 To validate functionality, I wrote unit tests in `AuthorRepositoryTest` and `BookRepositoryTest` to
 verify data operations and custom queries. These tests confirm repository reliability, while web
 interface tests verified create, read, and update functionalities, ensuring end-to-end functionality.
+
+## USAGE: ##
+- **Admin Dashboard**: The admin has full control over the data, including the ability to add new authors and books, update existing records, or delete entries as needed. Regular users, on the other hand, have restricted access, allowing them to view the list of books and authors without modifying the data.
+- **View Authors and Books:** Users can browse through a list of authors and their associated books, making it easy to explore the database. The search functionality allows users to filter books by author names, providing a quick way to find specific entries or explore the works of a particular author.
+- **Update and Delete:** Admins can use dedicated forms to update the details of authors or books, ensuring that the records remain accurate and up-to-date. Deletion functionality is carefully controlled and restricted to admins, with confirmation prompts to prevent unintentional data loss, maintaining the integrity of the database.
+
+## CHALLENGES FACED: ##
+
+- **Database Design:** Implementing the one-to-many relationship between `Author` and `Book` required careful handling of cascading operations to maintain data integrity, particularly during deletions.
+
+- **Exception Handling:** Ensuring robust error handling for invalid data inputs, especially during create and update operations, was challenging. It was essential to provide meaningful feedback without exposing sensitive details.
+
+- **Optimizing Custom Queries:** Writing efficient JPQL queries for searching books by author name and managing performance as data volume grew required balancing readability with query speed.
+
+- **User Interface with JSP:** Designing a user-friendly interface using JSP was challenging, particularly when integrating it with CSS for a consistent look and ensuring smooth form data handling.
+
+- **Role-Based Access Control (RBAC):** Differentiating admin and user permissions required careful setup to ensure secure access while maintaining a good user experience.
+
+- **Testing with JUnit:** Mocking data and simulating real-world scenarios for unit tests, especially for custom query logic, posed challenges but was crucial for application stability.
+
+- **Configuration and Deployment:** Managing database configuration and migration from development to production environments required precision to avoid data loss and ensure seamless transitions.
+  
+## FUTURE IMPROVEMENTS: ###
+
+- **Future Improvements:** Implement a RESTful API for External Access: Creating a RESTful API would allow other applications or services to interact with the system programmatically. This would enable integration with mobile apps or third-party platforms, expanding the application's reach and versatility.
+
+- **Enhance Security Features for Better User Management:** Adding features like JWT-based authentication or OAuth 2.0 would provide a more secure way to handle user sessions. Implementing multi-factor authentication (MFA) and stronger password validation can further protect user data from unauthorized access.
+
+- **Add More Search and Filter Options in the UI:** Expanding the search functionality to include filters like book genre, publication year, or partial matches for author names would improve usability. This would help users quickly find specific books or authors, making the application more user-friendly as the dataset grows.
+
+- **Optimize Database Queries for Improved Performance:** Refactoring complex queries and adding database indexes can reduce query execution times, especially for large datasets. Implementing caching mechanisms like Hibernate's second-level cache can also speed up frequently accessed data, enhancing the overall responsiveness of the application.
